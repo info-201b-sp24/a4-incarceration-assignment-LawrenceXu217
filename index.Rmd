@@ -2,16 +2,23 @@
 title: "A3: Incarceration"
 output: html_document
 ---
+Author: Lawrence Xu
 
 ### Introduction
 
-An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
+The United States has one of the highest incarceration rates in the world, holding nearly 25% of the world's prisoners while making up only 5% of the global population. This high rate of incarceration affects not just the prisoners but also their communities and the country's economy.
+
+This report explores the details of U.S. incarceration, analyzing data from different counties and states. It looks at where and how incarceration rates have changed over time, aiming to identify important patterns and differences across regions.
 
 ### Summary Information
 
+The analysis of the U.S. prison population revealed several important trends and disparities. The prison rate per total population showed that on average, about 0.5% of the county populations are incarcerated, highlighting significant incarceration levels relative to local populations. Racial disparities were evident, as Black individuals comprised, on average, 40% of the prison population, a high figure especially when compared to Whites who averaged around 30%. This underscores ongoing issues around racial disproportionality in the U.S. criminal justice system.
+
+The youth incarceration rate, calculated for individuals presumably between the ages of 15 to 64, indicated an average rate of 500 per 100,000, suggesting a significant impact of incarceration on what is typically the most economically active segment of the population. Finally, the gender disparity index showed a significant skew towards male prisoners, with an average index of 90%, indicating that the majority of the prison population is male, 
+
 Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
 
-These will likely be calculated using your DPLYR skills, answering questions such as: 
+These will likely be calculated using your DPLYR skills, answering questions such as:
 
 - What is the average value of my variable across all the counties (in the current year)?
 - Where is my variable the highest / lowest?
@@ -21,43 +28,54 @@ Feel free to calculate and report values that you find relevant. Again, remember
 
 ### The Dataset
 
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-What are possible limitations or problems with this data?   (at least 200 words)
+Who collected the data?
+<br> Ans: Jacob Kang-Brown (Vera Institude)
 
+How was the data collected or generated?
+<br> Ans: The data was collected through a combination of public records, government reports, and possibly surveys of incarceration facilities. Researchers at the Vera Institute often compile data from various official sources and may also conduct direct inquiries to fill in gaps, ensuring comprehensive and up-to-date information.
+
+Why was the data collected?
+<br> Ans: 1. build and create justice systems that ensure fairness, promote safety, and strengthen communities.
+<br> 2. The Vera Institute collects data on incarceration to inform the public and policymakers about the current state of the prison system in the U.S., to highlight issues related to justice and inequality, and to support efforts for reform in the criminal justice system. 
+
+How many observations (rows) are in your data?
+<br> Ans: 153811 rows
+
+How many features (columns) are in the data? 
+<br> Ans: 41 cols
+
+What, if any, ethical questions or questions of power do you need to consider when working with this data?
+<br> Ans: When working with incarceration data, several ethical considerations are crucial. Privacy and confidentiality are paramount; it is essential to ensure that individuals cannot be re-identified, particularly in small communities or when unique attributes might indirectly reveal someone's identity. Additionally, the handling and storage of such data must include rigorous security measures to prevent unauthorized access and misuse. Equally important is addressing issues of bias and representation. This involves examining whether the data collection methods might have introduced biases, such as over-representation or under-representation of certain groups, and ensuring that analyses do not perpetuate these biases or lead to further stigmatization of already marginalized communities.
+
+What are possible limitations or problems with this data?   (at least 200 words)
+<br> Ans: Working with incarceration data can present various limitations and problems that might affect the accuracy, reliability, and interpretation of the findings:
+<br> 1. Data Completeness and Accuracy: One primary concern is the completeness and accuracy of the data collected, which may suffer from inconsistencies, discrepancies in data collection methods across different jurisdictions, or data entry errors. Furthermore, the dataset might not capture all relevant variables that influence outcomes, such as socio-economic factors or the severity of crimes.
+<br> 2: Ethical and Analytical Challenges: The data’s granularity might either obscure important nuances or raise privacy concerns if too detailed. Analytically, distinguishing between correlation and causality from such datasets can be challenging without deeper qualitative analysis. Ethically, there are significant responsibilities to ensure data is not misused, which can reinforce negative stereotypes or influence punitive policies.
+<br> 3: Sampling Bias and Outdated Information: Sampling bias can occur if data is not collected uniformly across all sources, potentially overrepresenting or underrepresenting certain areas or groups. Additionally, the relevance of data can diminish if it is not regularly up
+<br> Addressing these limitations requires meticulous data validation, regular updates, stringent ethical oversight, and advanced analytical methods to ensure that findings are accurate, relevant, and presented responsibly.
 
 ### Trends Over Time Chart
+The second chart was designed to show the change over time in the percentage of Black prisoners, providing insights into whether there have been improvements, deteriorations, or stable patterns in the representation of Black individuals in the prison population. Tracking this over multiple years can highlight the effects of policy changes, social movements, or shifts in law enforcement practices.
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+Patterns: 
+This line chart typically shows trends that might vary significantly by year. For instance:
 
-The first chart that you will create and include will show the trend over time of your variable/topic. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
+Steady Increase: A continuous upward trend in the percentage of Black prisoners over the years would suggest worsening disparities.
+Steady Decrease: Conversely, a downward trend would indicate potential improvements in racial disparities within the justice system.
+Fluctuations: Irregular year-to-year changes can indicate external influences or changes in policy or enforcement that sporadically affect incarceration rates.
 
-- Show more than one, but fewer than ~10 trends
-  - This may mean showing the same measure for different locations or different racial groups. Think carefully about a meaningful comparison of locations (e.g., the top 10 counties in a state, top 10 states, etc.)
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
 
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, code = readLines("chart1.R")}
 ```
 
 ### Variable Comparison Chart
+This chart was included to visually investigate potential correlations between the density of the prison population per 100,000 people and the proportion of Black prisoners within those populations. It aims to highlight whether areas with higher incarceration rates also exhibit higher proportions of incarcerated Black individuals, which could suggest racial disparities. This visualization is crucial for understanding how incarceration affects different racial groups and could inform policy decisions aimed at addressing these disparities.
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+Patterns:
+The scatter plot with a regression line often reveals a trend where regions with higher prison population densities tend to have a higher percentage of Black prisoners. This positive correlation, if observed, can be indicative of systemic issues or biases in the criminal justice system that disproportionately affect Black communities. It's essential to note how the data points are distributed; for example, if there's a large variation or outliers, it might suggest regional differences in how incarceration is applied.
 
-The second chart that you will create and include will show how two different (continuous) variables are related to one another. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- If you choose to add a color encoding (not required), you need a legend for your different color and a clear legend title
+```{r, echo = FALSE, code = readLines("chart2.R")}
+```
 
 ### Map
 
@@ -68,4 +86,7 @@ The last chart that you will create and include will show how a variable is dist
 - Your map needs a title
 - Your color scale needs a legend with a clear label
 - Use a map based coordinate system to set the aspect ratio of your map
+
+```{r, echo = FALSE, code = readLines("map.R")}
+```
 
