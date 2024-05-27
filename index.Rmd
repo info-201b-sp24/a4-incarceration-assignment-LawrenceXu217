@@ -1,5 +1,5 @@
 ---
-title: "A3: Incarceration"
+title: "A4: Incarceration"
 output: html_document
 ---
 Author: Lawrence Xu
@@ -16,15 +16,19 @@ The analysis of the U.S. prison population revealed several important trends and
 
 The youth incarceration rate, calculated for individuals presumably between the ages of 15 to 64, indicated an average rate of 500 per 100,000, suggesting a significant impact of incarceration on what is typically the most economically active segment of the population. Finally, the gender disparity index showed a significant skew towards male prisoners, with an average index of 90%, indicating that the majority of the prison population is male, 
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+The dataset from the provided script calculates various incarceration metrics for a U.S. prison population dataset, giving insights into racial, age-based, and gender disparities within the incarcerated population. 
 
-These will likely be calculated using your DPLYR skills, answering questions such as:
+1.Prison Rate per Population: This metric illustrates the percentage of the total population that is incarcerated. It provides a broad view of incarceration intensity, which can indicate both social issues and law enforcement stringency.
 
-- What is the average value of my variable across all the counties (in the current year)?
-- Where is my variable the highest / lowest?
-- How much has my variable change over the last N years?
+2.Percentage of Black Prisoners: A crucial metric, this indicates the proportion of the prison population that is black, compared to the total prison population. This value highlights racial disparities within the justice system, showing potential bias or systemic issues affecting black communities.
 
-Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race.
+3.Percentage of White Prisoners: Similar to the percentage of black prisoners, this figure shows the proportion of white individuals in the prison system, allowing for racial comparison and analysis of how different races are represented in relation to their population sizes.
+
+4.Youth Incarceration Rate: Calculated per 100,000 of the population aged 15 to 64, this metric helps identify trends in the incarceration of younger individuals. It's a vital indicator for assessing the impact of crime and justice policies on youth.
+
+5.Gender Disparity Index: This index reflects the difference in incarceration rates between males and females, multiplied by 100 to express it as a percentage. A higher value suggests a greater disparity between the genders within the prison system, which can be used to discuss gender biases in arrests and sentencing.
+
+The analysis of these variables provides essential insights into the justice system's operational biases and disparities, highlighting areas needing reform and more targeted social programs to address systemic issues. Each metric not only serves to describe the current state but also sets a baseline for tracking changes over time, thereby facilitating a deeper understanding of the effectiveness of policy changes and interventions.
 
 ### The Dataset
 
@@ -62,7 +66,7 @@ This line chart typically shows trends that might vary significantly by year. Fo
 
 Steady Increase: A continuous upward trend in the percentage of Black prisoners over the years would suggest worsening disparities.
 Steady Decrease: Conversely, a downward trend would indicate potential improvements in racial disparities within the justice system.
-Fluctuations: Irregular year-to-year changes can indicate external influences or changes in policy or enforcement that sporadically affect incarceration rates.
+Fluctuations: Irregular (5 years a term) changes can indicate external influences or changes in policy or enforcement that sporadically affect incarceration rates.
 
 
 ```{r, echo = FALSE, code = readLines("chart1.R")}
@@ -79,13 +83,11 @@ The scatter plot with a regression line often reveals a trend where regions with
 
 ### Map
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+ "Geographic Distribution of Black Prisoner Percentage by State" is instrumental in visualizing the disparities in the percentage of black prisoners compared to the total prison population across the U.S. states. This visualization sheds light on significant regional differences, which may reflect the impact of local policies, socio-economic conditions, and enforcement practices on incarceration rates. The use of a color gradient effectively highlights states with higher percentages of black prisoners, with darker shades indicating higher concentrations, thereby making it easier for viewers to identify areas with severe disparities.
 
-The last chart that you will create and include will show how a variable is distributed geographically. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
+The inclusion of this chart is crucial for understanding and communicating the regional variations in racial disparities within the criminal justice system. It enables policymakers, researchers, and the general public to pinpoint states with pronounced racial inequalities in incarceration rates, providing a visual foundation for discussions on necessary reforms. However, the chart also shows some states with extraordinarily high percentages, as indicated by the color scale reaching up to 6000%. This likely represents data outliers or errors and suggests a need for adjusting the color scale for a more accurate and less misleading representation.
 
-- Your map needs a title
-- Your color scale needs a legend with a clear label
-- Use a map based coordinate system to set the aspect ratio of your map
+To enhance the effectiveness of this visualization, refining the color scale to exclude extreme values would provide a clearer and more truthful depiction of the data. Additionally, supplementing the map with detailed analyses or contextual data regarding local law enforcement practices could offer deeper insights into the root causes of the observed disparities.
 
 ```{r, echo = FALSE, code = readLines("map.R")}
 ```
